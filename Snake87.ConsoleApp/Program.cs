@@ -1,6 +1,6 @@
 ﻿using SadConsole;
 using SadConsole.Configuration;
-using Snake87.ConsoleApp; // Kendi GameScreen sınıfımıza ulaşmak için
+using Snake87.ConsoleApp;
 
 namespace Snake87.ConsoleApp;
 
@@ -8,18 +8,15 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        // SadConsole v10 için yeni başlangıç yapısı (Builder Pattern)
-        Settings.WindowTitle = "Snake87"; // Pencere başlığını buradan ayarlayabiliriz
+        Settings.WindowTitle = "Snake87";
 
-        // Yeni bir oyun konfigürasyonu oluşturuyoruz
         Builder sadConsoleConfig = new Builder()
-            .SetScreenSize(80, 25) // Pencere boyutunu belirliyoruz
-            .SetStartingScreen<GameScreen>() // Başlangıç ekranı olarak GameScreen'i göster diyoruz
+            .SetScreenSize(80, 25)
+            .SetStartingScreen<GameScreen>()
             .IsStartingScreenFocused(true)
-            .ConfigureFonts(); // Varsayılan yazı tipini kullan
+            .ConfigureFonts();
 
-        // Bu konfigürasyon ile oyunu oluştur ve çalıştır
-        Game.Create(sadConsoleConfig);
+        GameScreen.Create(sadConsoleConfig);
         Game.Instance.Run();
         Game.Instance.Dispose();
     }
