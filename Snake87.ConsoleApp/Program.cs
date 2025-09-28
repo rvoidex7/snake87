@@ -1,11 +1,18 @@
-﻿namespace Snake87.ConsoleApp
+﻿using System;
+using Terminal.Gui;
+using MainMenu;
+using GameScreen;
+
+namespace Snake87.ConsoleApp
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-            Console.ReadKey();
+            Application.Init();
+            var menu = new MyView();
+            Application.Top.Add(menu);
+            Application.Run();
         }
     }
 }

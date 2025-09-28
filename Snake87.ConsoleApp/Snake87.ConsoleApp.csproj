@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Terminal.Gui" Version="1.19.0" />
+    <ProjectReference Include="..\Snake87.core\Snake87.core.csproj" />
+  </ItemGroup>
+
 </Project>

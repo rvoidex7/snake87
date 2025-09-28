@@ -1,4 +1,4 @@
-﻿using myproj;
+﻿using MainMenu;
 using Terminal.Gui;
 
 Application.Init();
